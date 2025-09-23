@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Footer from "./components/Footer";
 import Background from "./components/Background";
 import { Box } from "@mui/material";
+import ProjectPage from "./pages/ProjectPage";
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/projects/:id" element={<ProjectPage />} />
           </Routes>
           <Footer />
         </Box>

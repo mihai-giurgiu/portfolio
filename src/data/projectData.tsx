@@ -3,6 +3,9 @@ interface Project {
   title: string;
   image: string;
   subtitles: string[];
+  description?: string;
+  gallery?: string[];
+  video?: string;
 }
 
 export const projects: Project[] = [
