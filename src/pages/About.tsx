@@ -10,6 +10,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaBehanceSquare, FaFlickr } from "react-icons/fa";
 import { Button } from "@mui/material";
+import Box from "@mui/material/Box";
 
 const About: React.FC = () => {
   const [rotateX, setRotateX] = useState(0);
@@ -42,45 +43,51 @@ const About: React.FC = () => {
             sx={{
               p: 3,
               mb: 3,
-              backgroundColor: 'rgba(255, 255, 255, 0.15)',
-              backdropFilter: 'blur(15px)',
-              WebkitBackdropFilter: 'blur(10px)',
+              backgroundColor: 'rgba(255, 255, 255, 0.33)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(15px)',
               borderRadius: 3,
               boxShadow: '0 8px 24px rgba(0, 0, 0, 0.38)',
             }}
           >
-            <Typography variant="h3" paragraph>
-              Hello, is it me you’re looking for?
+            <Typography variant="h4" paragraph>
+              Hi there! 👋
             </Typography>
             <Typography variant="body1" paragraph>
-              I’m a Freelance UI/UX Designer working in the industry for over 5 years. I’ve worked
-              on projects in a variety of sectors and can take your brief from concept to final delivery.
+              I’m a Freelance UI/UX and Visual Designer working in the industry for over 5 years. I’ve worked
+              on projects in a variety of sectors and I can take your brief from concept to final delivery.
               <br /><br />
 
               Over the years, I specialized in technologies like Wordpress, Figma, Adobe Creative Suite,
               and other design tools, polishing my skills in UI/UX, web, and graphic design. I was first introduced to development systems
-              through internal projects, working with React JS, Bootstrap, and CSS. I discovered my love for
-              interactive design, exploring platforms like Rive and Lottie, giving a litlle extra motions to my projects. :D    <br />
-              Got a project in mind, have any questions or just want to say hi? You can reach me through phone, email or Instagram.
+              through internal projects, working with React JS, Bootstrap, and CSS. I also discovered my love for
+              interactive design, exploring platforms like Rive and Lottie, giving a litlle extra motion to my projects. <br /><br />
+              Got a project in mind, have any questions or just want to say hi? You can reach me through phone, email or socials. <br /><br />
+
+              <Box display="flex" gap={1}>
+                phone:<strong> +40 720 527 725</strong>  email: <strong>mihaigiurgiu100@gmail.com</strong>
+              </Box>
             </Typography>
 
             <hr></hr>
-            <IconButton color="inherit" component="a" href="https://www.linkedin.com/in/mihai-g-b8555818b/" target="_blank">
-              <FaLinkedin />
-            </IconButton>
-            <IconButton color="inherit" component="a" href="https://www.behance.net/mihaigiurgiu" target="_blank">
-              <FaBehanceSquare />
-            </IconButton>
-            <IconButton color="inherit" component="a" href="https://www.flickr.com/people/mihaigg/" target="_blank">
-              <FaFlickr />
-            </IconButton>
-            <IconButton color="inherit" component="a" href="https://github.com/mihai-giurgiu" target="_blank">
-              <GitHubIcon />
-            </IconButton>
+            <Box display="flex" gap={1}>
+              <IconButton color="inherit" component="a" href="https://www.linkedin.com/in/mihai-g-b8555818b/" target="_blank">
+                <FaLinkedin />
+              </IconButton>
+              <IconButton color="inherit" component="a" href="https://www.behance.net/mihaigiurgiu" target="_blank">
+                <FaBehanceSquare />
+              </IconButton>
+              <IconButton color="inherit" component="a" href="https://www.flickr.com/people/mihaigg/" target="_blank">
+                <FaFlickr />
+              </IconButton>
+              <IconButton color="inherit" component="a" href="https://github.com/mihai-giurgiu" target="_blank">
+                <GitHubIcon />
+              </IconButton>
 
-            <Button variant="outlined" href="./src/assets/MihaiGiurgiuCV.pdf" download>
-              Download CV
-            </Button>
+              <Button variant="contained" href="./src/assets/MihaiGiurgiuCV.pdf" download>
+                Download CV
+              </Button>
+            </Box>
           </Card>
         </Grid>
         <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex", justifyContent: "center" }}>
@@ -97,7 +104,7 @@ const About: React.FC = () => {
               <Card>
                 <CardMedia
                   component="img"
-                  image={"./src/assets/ProfilePic_1080x1080.jpg"}
+                  image={"../assets/ProfilePic_1080x1080.jpg"}
                   alt="Mihai Gui"
                 />
               </Card>

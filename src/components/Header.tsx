@@ -29,7 +29,7 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <AppBar position="static" color="transparent" elevation={0} sx={{ mb: 4 }}>
+    <AppBar position="static" color="transparent" elevation={0} sx={{ mb: 2 }}>
       <Toolbar
         sx={{
           maxWidth: 1250,
