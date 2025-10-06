@@ -4,6 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import { Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { FaLinkedin } from "react-icons/fa6";
@@ -15,8 +16,14 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { Link as RouterLink } from "react-router-dom";
+import DarkModeToggle from "./DarkModeToggle";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = (open: boolean) => () => {
@@ -29,7 +36,7 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <AppBar position="static" color="transparent" elevation={0} sx={{ mb: 2 }}>
+    <AppBar position="static" component={Link} to="/" color="transparent" elevation={0} sx={{textDecoration: "none", mb: 2 }}>
       <Toolbar
         sx={{
           maxWidth: 1250,
@@ -37,13 +44,19 @@ const Header: React.FC = () => {
           width: "100%",
           display: "flex",
           justifyContent: "space-between",
-          height: 100
+          height: 100,
         }}
       >
         <Typography variant="h4" component="div">
           Mihai Giurgiu | UI & Visual Designer
         </Typography>
-        <Box sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center", gap: 1 }}>
+        <Box
+          sx={{
+            display: { xs: "none", sm: "flex" },
+            alignItems: "center",
+            gap: 1,
+          }}
+        >
           {navLinks.map((link) => (
             <Button key={link.title} color="inherit" component={RouterLink} to={link.path}>
               {link.title}
@@ -61,9 +74,10 @@ const Header: React.FC = () => {
           <IconButton color="inherit" component="a" href="https://github.com/mihai-giurgiu" target="_blank">
             <GitHubIcon />
           </IconButton>
+          <DarkModeToggle darkMode={darkMode} onToggle={toggleDarkMode} />
         </Box>
 
-        {/* Mobile nav */}
+        {/* Mobile navbar */}
         <Box sx={{ display: { xs: "flex", sm: "none" } }}>
           <IconButton color="inherit" onClick={toggleDrawer(true)}>
             <MenuIcon />
@@ -78,26 +92,21 @@ const Header: React.FC = () => {
                     </ListItemButton>
                   </ListItem>
                 ))}
-                <ListItem disablePadding>
-                  <ListItemButton component="a" href="https://www.linkedin.com/in/mihai-g-b8555818b/" target="_blank">
-                    <FaLinkedin style={{ marginRight: 8 }} /> LinkedIn
-                  </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton component="a" href="https://www.behance.net/mihaigiurgiu" target="_blank">
-                    <FaBehanceSquare style={{ marginRight: 8 }} /> Behance
-                  </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton component="a" href="https://www.flickr.com/people/mihaigg/" target="_blank">
-                    <FaFlickr style={{ marginRight: 8 }} /> Flickr
-                  </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton component="a" href="https://github.com/mihai-giurgiu" target="_blank">
-                    <GitHubIcon style={{ marginRight: 8 }} /> GitHub
-                  </ListItemButton>
-                </ListItem>
+                <Box sx={{ display: "flex", justifyContent: "flex-start",pl:1, mt: 1 }}>
+                  <IconButton color="inherit" component="a" href="https://www.linkedin.com/in/mihai-g-b8555818b/" target="_blank">
+                    <FaLinkedin />
+                  </IconButton>
+                  <IconButton color="inherit" component="a" href="https://www.behance.net/mihaigiurgiu" target="_blank">
+                    <FaBehanceSquare />
+                  </IconButton>
+                  <IconButton color="inherit" component="a" href="https://www.flickr.com/people/mihaigg/" target="_blank">
+                    <FaFlickr />
+                  </IconButton>
+                  <IconButton color="inherit" component="a" href="https://github.com/mihai-giurgiu" target="_blank">
+                    <GitHubIcon />
+                  </IconButton>
+                  <DarkModeToggle darkMode={darkMode} onToggle={toggleDarkMode} />
+                </Box>
               </List>
             </Box>
           </Drawer>

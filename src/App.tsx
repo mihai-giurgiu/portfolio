@@ -1,47 +1,43 @@
-import React, { useMemo, useState } from "react";
+// src/App.tsx
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Footer from "./components/Footer";
 import Background from "./components/Background";
-import { Box, ThemeProvider, createTheme, CssBaseline, IconButton } from "@mui/material";
+import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import ProjectPage from "./pages/ProjectPage";
 
 const App: React.FC = () => {
-  const [mode, setMode] = useState<"light" | "dark">("light");
+    const getInitialMode = () => {
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode === "true"; // stored as string, so we convert to boolean
+  };
 
-  // Create theme based on current mode
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-          ...(mode === "dark"
-            ? {
-                background: {
-                  default: "#121212",
-                  paper: "rgba(255, 255, 255, 0.08)",
-                },
-              }
-            : {
-                background: {
-                  default: "#fafafa",
-                  paper: "#fff",
-                },
-              }),
-        },
-      }),
-    [mode]
-  );
+  const [darkMode, setDarkMode] = useState(getInitialMode);
+
+  // Step 2: When darkMode changes, update localStorage
+  useEffect(() => {
+    localStorage.setItem("darkMode", darkMode.toString());
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => !prev);
+  };
+
+  const theme = createTheme({
+    palette: {
+      mode: darkMode ? "dark" : "light",
+    },
+  });
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline /> {/* Applies background/text colors depending on mode */}
+      <CssBaseline />
       <Router>
         <Background />
-        <Header />
-
+        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <Box sx={{ width: "100%", py: 6 }}>
           <Box
             sx={{
