@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
   ];
 
   return (
-    <AppBar position="static" component={Link} to="/" color="transparent" elevation={0} sx={{ textDecoration: "none" }}>
+    <AppBar position="static" color="transparent" elevation={0}>
       <Toolbar
         sx={{
           maxWidth: 1300,
@@ -47,10 +47,13 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
           height: 100,
         }}
       >
-        <Typography variant="h4" component="div" sx={{
-          fontSize: { xs: "1.2rem", sm: "2rem", md: "2rem", lg: "2.4rem" },
-          fontWeight: 500,
-        }}>
+        <Typography variant="h4" component={Link} to="/"
+          sx={{
+            fontSize: { xs: "1.2rem", sm: "2rem", md: "2rem", lg: "2.4rem" },
+            fontWeight: 500,
+            textDecoration: "none",
+            color: "inherit"
+          }}>
           Mihai Giurgiu | UI & Visual Designer
         </Typography>
         <Box
