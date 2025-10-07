@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
   ];
 
   return (
-    <AppBar position="static" component={Link} to="/" color="transparent" elevation={0} sx={{textDecoration: "none", mb: 2 }}>
+    <AppBar position="static" component={Link} to="/" color="transparent" elevation={0} sx={{ textDecoration: "none" }}>
       <Toolbar
         sx={{
           maxWidth: 1250,
@@ -47,7 +47,10 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
           height: 100,
         }}
       >
-        <Typography variant="h4" component="div">
+        <Typography variant="h4" component="div" sx={{
+          fontSize: { xs: "1.2rem", sm: "2rem", md: "2rem", lg: "2.4rem" },
+          fontWeight: 500,
+        }}>
           Mihai Giurgiu | UI & Visual Designer
         </Typography>
         <Box
@@ -92,7 +95,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
                     </ListItemButton>
                   </ListItem>
                 ))}
-                <Box sx={{ display: "flex", justifyContent: "flex-start",pl:1, mt: 1 }}>
+                <Box sx={{ display: "flex", justifyContent: "flex-start", pl: 1, mt: 1 }}>
                   <IconButton color="inherit" component="a" href="https://www.linkedin.com/in/mihai-g-b8555818b/" target="_blank">
                     <FaLinkedin />
                   </IconButton>

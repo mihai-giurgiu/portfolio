@@ -19,13 +19,15 @@ const ProjectPage: React.FC = () => {
   const project = projects.find((p) => p.id === Number(id))!;
 
   return (
-    <Box sx={{ p: { xs: 2, md: 6 } }}>
+    <Box sx={{ p: { xs: 2, md: 3 } }}>
       <Box sx={{ ...glassStyle }}>
         <Typography
           variant="h2"
           sx={{
             mb: 3,
             fontWeight: 700,
+            fontSize: "clamp(1.5rem, 10vw, 4rem)",
+            wordBreak: "break-word"
           }}
         >
           {project.title}
@@ -74,14 +76,36 @@ const ProjectPage: React.FC = () => {
               />
             </Box>
           ))}
-          <Box>
-            <video
-              src={project.video}
-              controls
-              style={{ width: "100%", borderRadius: "12px" }}
-            />
-          </Box>
+          {project.video && (
+            <Box
+              sx={{
+                position: "relative",
+                borderRadius: "12px",
+                overflow: "hidden",
+                aspectRatio: "4/3"
+              }}
+            >
+              <Box
+                component="video"
+                src={project.video}
+                controls
+                autoPlay
+                loop
+                muted
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "12px",
+                }}
+              />
+            </Box>
+          )}
         </Box>
+
       </Box>
     </Box>
   );

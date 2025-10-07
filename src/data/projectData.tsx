@@ -21,7 +21,7 @@ export const projects: Project[] = [
       "../assets/BentikWebsite2-min.jpg",
       "../assets/BentikWebsite3-min.jpg"
     ],
-    video: "https://www.youtube.com/watch?v=m8Oy0MGnvx0",
+    video: "../assets/BentikTimeline1.mov"
   },
   {
     id: 2,
@@ -32,7 +32,8 @@ export const projects: Project[] = [
     gallery: [
       "../assets/Website1-min.jpg",
       "../assets/LogoAP_Thumbnail.jpg",
-      "../assets/Website3-min.jpg"]
+      "../assets/Website3-min.jpg"],
+    video: "../assets/arteplasticescroll.mov"
   },
   {
     id: 3,
@@ -46,7 +47,7 @@ export const projects: Project[] = [
       "../assets/WebvisionBranding2.jpg",
       "../assets/WebvisionWebsite.jpg",
     ],
-    video: "https://www.youtube.com/watch?v=8bYF1zLrHgg",
+    video: "../assets/webvisionscroll.mov",
   },
   {
     id: 4,
@@ -58,7 +59,8 @@ export const projects: Project[] = [
     gallery: [
       "../assets/login_page.jpg",
       "../assets/field_details_page.jpg",
-      "../assets/Teren_Showcase4.jpg",]
+      "../assets/Teren_Showcase4.jpg",],
+    video: "../assets/terenscroll.mov"
   },
   {
     id: 5,
@@ -69,7 +71,8 @@ export const projects: Project[] = [
     gallery: [
       "../assets/SofiaSmile_Website1-min.jpg",
       "../assets/SofiaSmile_Website2-min.jpg",
-      "../assets/SofiaSmile_Website3-min.jpg",]
+      "../assets/SofiaSmile_Website3-min.jpg",],
+    video: "../assets/sofiasmilescroll.mov"
 
   },
   {
@@ -77,11 +80,12 @@ export const projects: Project[] = [
     title: "Satchinez Secondary School",
     image: "/assets/SatchinezThumbnail.jpg",
     subtitles: ["Website Design"],
-    description:"Scoala Satchinez was a really uplifthing project, building a website to give the school a friendly online presence. The goal was to create a space where parents, teachers, and students could easily find information about news, activities, and events.",
+    description: "Scoala Satchinez was a really uplifthing project, building a website to give the school a friendly online presence. The goal was to create a space where parents, teachers, and students could easily find information about news, activities, and events.",
     gallery: [
       "../assets/SatchinezWebsite1-min.jpg",
       "../assets/SatchinezWebsite2-min.jpg",
-      "../assets/SatchinezWebsite3-min.jpg",]
+      "../assets/SatchinezWebsite3-min.jpg",],
+    video: "../assets/satchinezscroll.mov",
 
   },
   {
@@ -114,11 +118,11 @@ export const projects: Project[] = [
     title: "Sauca & Partners | Lawyer",
     image: "../assets/Sauca_TrifoldBrochure2-min.jpg",
     subtitles: ["Brochure", "Print Design"],
-    description:"I designed this trifold brochure for Saucă & Partners, a law firm based in Timișoara, with the goal of presenting their services in a structured way. The design focuses on clarity and readability, guiding the reader naturally through the firm’s story, contact details, and key values.",
+    description: "I designed this trifold brochure for Saucă & Partners, a law firm based in Timișoara, with the goal of presenting their services in a structured way. The design focuses on clarity and readability, guiding the reader naturally through the firm’s story, contact details, and key values.",
     gallery: [
       "../assets/Sauca_TrifoldBrochure2.jpg",
       "../assets/Sauca_TrifoldBrochure3-min.jpg",
       "../assets/Sauca_TrifoldBrouchure-min.jpg",
-      ]
+    ]
   },
 ];
