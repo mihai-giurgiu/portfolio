@@ -1,7 +1,8 @@
 import React from "react";
 import { Box, Typography, IconButton } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { FaBehanceSquare, FaFlickr } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
 
 const Footer: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ const Footer: React.FC = () => {
     >
       <Box
         sx={{
-          maxWidth: 1200,
+          maxWidth: 1300,
           mx: "auto",
           px: 3,
           display: "flex",
@@ -31,21 +32,17 @@ const Footer: React.FC = () => {
         </Typography>
 
         <Box sx={{ display: "flex", gap: 1 }}>
-          <IconButton
-            color="inherit"
-            component="a"
-            href="https://github.com/yourusername"
-            target="_blank"
-          >
-            <GitHubIcon />
+          <IconButton color="inherit" component="a" href="https://www.linkedin.com/in/mihai-g-b8555818b/" target="_blank">
+            <FaLinkedin />
           </IconButton>
-          <IconButton
-            color="inherit"
-            component="a"
-            href="https://linkedin.com/in/yourusername"
-            target="_blank"
-          >
-            <LinkedInIcon />
+          <IconButton color="inherit" component="a" href="https://www.behance.net/mihaigiurgiu" target="_blank">
+            <FaBehanceSquare />
+          </IconButton>
+          <IconButton color="inherit" component="a" href="https://www.flickr.com/people/mihaigg/" target="_blank">
+            <FaFlickr />
+          </IconButton>
+          <IconButton color="inherit" component="a" href="https://github.com/mihai-giurgiu" target="_blank">
+            <GitHubIcon />
           </IconButton>
         </Box>
       </Box>

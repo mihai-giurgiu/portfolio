@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
     <AppBar position="static" component={Link} to="/" color="transparent" elevation={0} sx={{ textDecoration: "none" }}>
       <Toolbar
         sx={{
-          maxWidth: 1250,
+          maxWidth: 1300,
           mx: "auto",
           width: "100%",
           display: "flex",
