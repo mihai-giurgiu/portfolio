@@ -1,4 +1,3 @@
-// src/App.tsx
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
@@ -10,14 +9,13 @@ import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import ProjectPage from "./pages/ProjectPage";
 
 const App: React.FC = () => {
-    const getInitialMode = () => {
+  const getInitialMode = () => {
     const savedMode = localStorage.getItem("darkMode");
-    return savedMode === "true"; // stored as string, so we convert to boolean
+    return savedMode === "true";
   };
 
   const [darkMode, setDarkMode] = useState(getInitialMode);
 
-  // Step 2: When darkMode changes, update localStorage
   useEffect(() => {
     localStorage.setItem("darkMode", darkMode.toString());
   }, [darkMode]);
@@ -29,6 +27,11 @@ const App: React.FC = () => {
   const theme = createTheme({
     palette: {
       mode: darkMode ? "dark" : "light",
+      primary: { main: "#2f29a4ff" },
+      secondary: { main: "#FF6584" },
+    },
+    typography: {
+      fontFamily: "Geist, Arial, sans-serif",
     },
   });
 
