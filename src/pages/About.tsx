@@ -80,8 +80,6 @@ const About: React.FC = () => {
             </motion.div>
           </motion.div>
         </Grid>
-
-        {/* Text second on mobile, first on desktop */}
         <Grid
           size={{ xs: 12, md: 6 }}
           sx={{
@@ -126,7 +124,6 @@ const About: React.FC = () => {
                 </Typography>
               </Box>
             </Typography>
-
             <hr />
 
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 1 }}>
